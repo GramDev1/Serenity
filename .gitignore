@@ -1,2 +1,3 @@
-# hide production
-*/target/
+out/*
+.idea/*
+Serenity10.iml
