@@ -11,15 +11,14 @@ import net.dv8tion.jda.core.hooks.ListenerAdapter;
  */
 public class BotListener extends ListenerAdapter {
 
-    public void onMessage(MessageReceivedEvent e) {
+    @Override
+    public void onMessageReceived(MessageReceivedEvent e) {
         if(e.getMessage().getContent().startsWith("!") || e.getMessage().getAuthor().getId().equalsIgnoreCase(e.getJDA().getSelfUser().getId())) {
             Core.commandHandler(Core.cp.parse(e.getMessage().getContent().toLowerCase(), e));
         }
     }
 
-    public void onReady(ReadyEvent event) {
-        Log.broadcast("Connected!");
-    }
+ 
 
 
 }
